@@ -1,33 +1,142 @@
-.App {
+
+
+/* UI - Gradient */
+.ui-gradient-atlas{
+  background: #FEAC5E;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.ui-gradient-hersheys{
+  background: #1e130c;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #9a8478, #1e130c);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #9a8478, #1e130c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.ui-gradient-ukraine{
+  background: #004FF9;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFF94C, #004FF9);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFF94C, #004FF9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* UI - Gradient End*/
+
+
+
+.div-full-width {
+  width:100%;
+  margin:auto;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.my-pic{
+  height:250px;
+  padding: 0.5em 0 1em 0;
+  border-radius:40%
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.landing-page-banner{
+  background-color: black;
+  opacity: 0.7;
+  width: auto;
+  margin: auto;
+  border-radius: 10px;
+  padding: 0 1em 0 1em
+}
+
+.landing-page-banner h1{
+  font-size: 375%;
+  font-weight: bold;
+  color: white ;
+  text-align: center;
+  margin:0 0 0.2em 0;
+}
+
+.landing-page-banner hr{
+  width:  50%;
+  margin: auto;
+  border-top:  dotted;
+  color:white;
+}
+
+.landing-page-banner p{
+  font-size: 20px;
   color: white;
+  text-align: center;
+  padding: 0.5em 1em 0 1em;
 }
 
-.App-link {
-  color: #61dafb;
+.social-links {
+  /* display:flex;
+  justify-content: space-between;
+  width:50%; */
+  color:white;
+ 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.social-links i{
+  color: white;
+  font-size: 4em;
+  padding: 10px
+}
+
+/* Projects Page */
+.projects-grid {
+  display: flex;
+}
+
+/* Contact Page */
+.contact-body {
+  background:grey;
+  width:100%;
+  height:100%;
+  justify-content: center;
+  padding: 2em 0 0 0;
+  
+}
+.contact-grid {
+  text-align: center;
+  justify-content: center;
+  width: 80%;
+  height: auto;
+  color:black;
+  background: white; 
+  border: 2px solid purple;
+}
+
+.contact-list i {
+  font-size: 2em;
+  padding: 0 2em 0 0;
+}
+
+.contact-list-item {
+  font-family: 'Anton', sans-serif;
+  font-size: 1em;
+  text-align: center
+}
+
+
+hr{
+  width:  auto;
+  margin: auto;
+  border: 2px dotted white;
+  color:white;
+  
+}
+
+
+
+/* Reusme Page */
+
+.resume-right-col {
+  background:#36302F ;
+  color: white
+}
+
+.resume-left-col-list-item {
+  padding:0.5em;
+}
+
+.education-experience {
+  padding: 0 1em 0 1em;
 }
