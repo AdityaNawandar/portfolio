@@ -12,8 +12,7 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1"
   },
-  "main": "web.js",
-  "engines": {
+    "engines": {
     "node": "10.15.3",
     "npm": "6.4.1"
   },
