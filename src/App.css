@@ -85,6 +85,12 @@
   display: flex;
 }
 
+.project-pic{
+  max-height:240px;
+  padding: 0.5em 0 1em 0;
+  
+}
+
 /* Contact Page */
 .contact-body {
   background:grey;

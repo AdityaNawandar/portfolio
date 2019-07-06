@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Card, CardTitle, CardText, CardActions, CardMenu, Button, IconButton, Tab, Tabs, Grid, Cell } from 'react-mdl'
 import { } from 'react-mdl'
+import Project from './project'
+
 
 export class Projects extends Component {
     constructor(props) {
@@ -8,32 +10,72 @@ export class Projects extends Component {
         this.state = { activeTab: 0 }
     }
 
-    returnCard = (projectName, projectDescription) => {
-        return (
-            <div>
-                <Card shadow={5} style={{ minWidth: '320px', height: '320px', margin: 'auto' }}>
-                    <CardTitle expand style={{ color: '#fff', background: 'url(http://www.getmdl.io/assets/demos/dog.png) bottom right 15% no-repeat #46B6AC' }}>{projectName}</CardTitle>
-                    <CardText>
-                        {projectDescription}
-                    </CardText>
-                    <CardActions border>
-                        <Button colored>
-                            <a href="http://www.github.com/adityabnawandar" target="_blank" rel="noopener noreferrer">Github</a>
-                        </Button>
-                    </CardActions>
-                </Card></div>
+    returnCard = (objJSON) => {
+
+        const projects = Object.values(objJSON);
+        var projectsList = projects.map(
+            (project, index) =>
+                    <Project key={index} projectName={project.projectName} projectDescription={project.projectDescription} />
         )
+        return (projectsList)
     }
 
     toggleCategories = () => {
+        const arrReact = [
+            {
+                projectName: 'todo-app',
+                projectDescription: " Sample Description "
+            },
+            {
+                projectName: 'react-project-2',
+                projectDescription: " Sample Description "
+            },
+            {
+                projectName: 'react-project-3',
+                projectDescription: " Sample Description "
+            },
+        ];
+
+
+        const arrNode = [
+            {
+                projectName: 'node-project-1',
+                projectDescription: " Sample Description "
+            },
+            {
+                projectName: 'node-project-2',
+                projectDescription: " Sample Description "
+            },
+            {
+                projectName: 'node-project-3',
+                projectDescription: " Sample Description "
+            },
+        ];
+
+        const arrSolidity = [
+            {
+                projectName: 'solidity-project-1',
+                projectDescription: ""
+            },
+            {
+                projectName: 'solidity-project-2',
+                projectDescription: ""
+            },
+            {
+                projectName: 'solidity-project-3',
+                projectDescription: ""
+            },
+        ];
+
+
         if (this.state.activeTab === 0) {
-            return (this.returnCard("Node.js", "This is a Node Project"));
+            return (<div className="projects-grid">{this.returnCard(arrReact)}</div>);
         }
         else if (this.state.activeTab === 1) {
-            return (this.returnCard("React", "This is a React Project"))
+            return (<div className="projects-grid">{this.returnCard(arrSolidity)}</div>);
         }
         else if (this.state.activeTab === 2) {
-            return (this.returnCard("Others", "This is Other Project"))
+            return (<div className="projects-grid">{this.returnCard(arrNode)}</div>);
         }
     }
 
@@ -42,13 +84,13 @@ export class Projects extends Component {
         return (
             <div className="category-tabs">
                 <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab: tabId })} ripple>
+                    <Tab>React-Redux</Tab>
+                    <Tab>Solidity/DApps</Tab>
                     <Tab>Node.js</Tab>
-                    <Tab>React</Tab>
-                    <Tab>Others</Tab>
                 </Tabs>
-                <Grid className="projects-grid">
+                <Grid>
                     <Cell col={12}>
-                        <div>{this.toggleCategories()}</div>
+                        {this.toggleCategories()}
                     </Cell>
                 </Grid>
             </div>
